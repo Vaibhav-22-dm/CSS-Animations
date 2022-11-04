@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Shorthand</title>
+    <style>
+       html, body{
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        margin: 0;
+       } 
+
+       .grass, .sky, .road{
+           position: relative;
+       }
+
+       .sky{
+           height: 40%;
+           background: skyblue;
+       }
+
+       .grass{
+           height: 30%;
+           background: seagreen;
+       }
+
+       .road{
+           display: flex;
+           flex-direction: column;
+           height: 30%;
+           background: dimgrey;
+           box-sizing: border-box;
+           border-top: 10px solid grey;
+           border-bottom: 10px solid grey;
+           width: 100%;
+       }
+
+       .lines{
+           box-sizing: border-box;
+           border-top: 5px dashed #fff;
+           height: 0;
+           width: 100%;
+           position: absolute;
+           top: 45%
+       }
+
+
+       /* ELEMENTS TO ANIMATE */
+      
+
+       #img1{
+           position: absolute;
+           top: -40px;
+           width: 50px;
+           animation: drive 3s both infinite linear, jump 0.3s 1.2s ease;
+           /* This is how we can integrate two or more animations together.*/
+       }
+
+       #img2{
+           width: 50px;
+           animation-name: drive;
+           animation-fill-mode: both;
+           animation-iteration-count: infinite;
+           animation-timing-function: linear;
+           animation-duration: 5s;
+       }
+
+       .cloud{
+           position: absolute;
+       }
+
+       .cloud:nth-child(1){
+           width: 150px;
+           top: 120px;
+           opacity: 0.5;
+           animation: wind 60s linear 0.5s infinite reverse;
+        }
+
+       .cloud:nth-child(2){
+           width: 200px;
+           top: 0;
+           animation: wind 40s linear infinite reverse;
+       }
+
+
+       /* KEYFRAMES */
+
+       @keyframes drive{
+           from{ transform: translateX(0);}
+           to{ transform: translateX(700px);}
+       }
+
+       @keyframes wind{
+           from{left: -300px}
+           to{left: 100%}
+       }
+
+       @keyframes jump{
+           0%{
+               top: -40px;
+           }
+           50%{
+               top: -100px;
+           }
+           100%{
+               top: -40px;
+           }
+       }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="sky">
+        <img src="./img/icons8-india-100.png" alt="error" class="cloud">
+        <img src="./img/icons8-india-100.png" alt="error" class="cloud">
+    </div>
+    <div class="grass"></div>
+    <div class="road">
+        <div class="lines"></div>
+        <img src=",/img/icons8-around-the-globe-64.png" alt="error" id="img1">
+        <img src="./img/icons8-around-the-globe-64.png" alt="error" id="img2">
+    </div>
+    
+</body>
+</html>

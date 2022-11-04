@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            margin: auto;
+            margin-top: 100px;
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+
+        .image-container{
+            display: flex;
+            flex-direction: row;
+            transition: 0.5s all;
+            position: relative;
+            animation: forward 16s ease-in 0.5s infinite alternate forwards;
+            left: 0px;
+        }
+
+        @keyframes forward{
+            0%{
+                left: 0px;
+            }
+            5%{
+                left: 0px;
+            }
+            10%{
+                left: 0px;
+            }
+            20%{
+                left: -400px;
+            }
+            25%{
+                left: -400px;
+            }
+            30%{
+                left: -400px;
+            }
+            35%{
+                left: -800px;
+            }
+            40%{
+                left: -800px;
+            }
+            45%{
+                left: -800px;
+            }
+            50%{
+                left: -1200px;
+            }
+            55%{
+                left: -1200px;
+            }
+            60%{
+                left: -1200px;
+            }
+            65%{
+                left: -1600px;
+            }
+            70%{
+                left: -1600px;
+            }
+            75%{
+                left: -1600px;
+            }
+            80%{
+                left: -2000px;
+            }
+            90%{
+                left: -2000px;
+            }
+            100%{
+                left: -2000px;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="img/girl.jpg" alt="" class="image" id="img1" width="400px" height="400px">
+            <img src="img/tree .jpeg" alt="" class="image" id="img2" width="400px" height="400px">
+            <img src="img/street.jpg" alt="" class="image" id="img3" width="400px" height="400px">
+            <img src="img/duck.jpeg" alt="" class="image" id="img3" width="400px" height="400px">
+            <img src="img/flower.jpg" alt="" class="image" id="img3" width="400px" height="400px">
+            <img src="img/sursuri.jpeg" alt="" class="image" id="img3" width="400px" height="400px">
+        </div>
+    </div>
+    
+</body>
+
+</html>

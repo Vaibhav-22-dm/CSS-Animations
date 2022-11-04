@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repeating Animations</title>
+    <style>
+       html, body{
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        margin: 0;
+       } 
+
+       .grass, .sky, .road{
+           position: relative;
+       }
+
+       .sky{
+           height: 40%;
+           background: skyblue;
+       }
+
+       .grass{
+           height: 30%;
+           background: seagreen;
+       }
+
+       .road{
+           height: 30%;
+           background: dimgrey;
+           box-sizing: border-box;
+           border-top: 10px solid grey;
+           border-bottom: 10px solid grey;
+           width: 100%;
+       }
+
+       .lines{
+           box-sizing: border-box;
+           border-top: 5px dashed #fff;
+           height: 0;
+           width: 100%;
+           position: absolute;
+           top: 45%
+       }
+
+
+       /* ELEMENTS TO ANIMATE */
+       img{
+           position: absolute;
+           top: 30px;
+           left: 0px;
+           animation-name: drive;
+           animation-duration: 2s;
+           animation-fill-mode: both;
+           animation-iteration-count: infinite;
+           /* This property specifies the no. of times the animation should work. Over here it is infinite times so the animation goes on working in a loop. We can set it at finite times also like 3 , 4,....n times. */
+       }
+
+
+
+
+       /* KEYFRAMES */
+
+       @keyframes drive{
+           from{ transform: translateX(-200px);}
+           to{ transform: translateX(1600px);}
+       }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="sky"></div>
+    <div class="grass"></div>
+    <div class="road">
+        <div class="lines"></div>
+        <img src="icons8-around-the-globe-64.png" alt="error">
+    </div>
+    
+</body>
+</html>

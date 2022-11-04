@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation_Fill_Mode</title>
+    <style>
+       html, body{
+           height: 100%;
+           width: 100%;
+           overflow: hidden;
+           margin: 0;
+       } 
+
+       .grass, .sky, .road{
+           position: relative;
+       }
+
+       .sky{
+           height: 40%;
+           background: skyblue;
+       }
+
+       .grass{
+           height: 30%;
+           background: seagreen;
+       }
+
+       .road{
+           height: 30%;
+           background: dimgrey;
+           box-sizing: border-box;
+           border-top: 10px solid grey;
+           border-bottom: 10px solid grey;
+           width: 100%;
+           display: flex;
+           flex-direction: column;
+           align-items: flex-start;
+       }
+
+       .lines{
+           box-sizing: border-box;
+           border-top: 5px dashed #fff;
+           height: 0;
+           width: 100%;
+           position: absolute;
+           top: 45%
+       }
+
+
+       /* ELEMENTS TO ANIMATE */
+       img{
+           position: relative;
+           z-index: 1;
+           animation-name: drive;
+           animation-duration: 3s;
+           animation-delay: 2s;
+           /* This property specifies the time after loading the page after which the animation should start. */
+
+       }
+
+       #img1{
+        animation-fill-mode: forwards; 
+           /* This property specifies that the element will stay in the final state after animation is over. */
+
+       }
+
+       #img2{
+        animation-fill-mode: backwards;
+        /* This property specifies that the element will stast in the initial state(200px) after loading of page is over. */
+       }
+
+       #img3{
+        animation-fill-mode: both;
+        /* This property specifies that the element will start in the initial state(200px) after loading of page is over and will stay in the final state after the animation is over. */
+       }
+
+
+       /* KEYFRAMES */
+       @keyframes drive{
+           from{ transform: translateX(200px);}
+           to{ transform: translateX(700px);}
+       }
+       
+    </style>
+</head>
+<body>
+    <div class="sky"></div>
+    <div class="grass"></div>
+    <div class="road">
+        <div class="lines"></div>
+        <img src="./img/icons8-around-the-globe-64.png" alt="error" id="img1">
+        <img src="./img/icons8-around-the-globe-64.png" alt="error" id="img2">
+        <img src="./img/icons8-around-the-globe-64.png" alt="error" id="img3">
+    </div>
+</body>
+</html>

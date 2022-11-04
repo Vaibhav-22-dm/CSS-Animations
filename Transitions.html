@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transitions</title>
+    <style>
+        body{
+            background: skyblue;
+            text-align: center;
+        }
+
+        .wrapper{
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .circle{
+            width: 100px;
+            padding: 50px 0;
+            line-height: 0;
+            margin: 60px auto;
+            background: pink;
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background 0.5s ease-in, transform 2s 1s ease-out;
+            /* This transition property provides the time duration in which the property background should change on hovering. 
+            There are 4 timing functions ease-in, ease-out, ease-in-out and linear(normal state).
+            'ease-in' specifies that the transition should start slowly. Similarly ease-out will end slow and ease-in-out will do both. 
+            The second time duration(as seen in transform property) provides the delay time.*/
+        }
+
+        .circle:hover{
+            background: salmon;
+            transform: rotate(360deg);
+        }
+
+
+        
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <img src="./img/icons8-around-the-globe-64.png" alt="">
+        <div class="circle">Hover Me</div>
+    </div>
+</body>
+</html>

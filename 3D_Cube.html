@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Cube</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .cube {
+        width: 400px;
+        height: 400px;
+        margin: auto;
+        margin-top: 200px;
+        transform-origin: center;
+        transform-style: preserve-3d;
+        animation: animate 20s linear infinite;
+    }
+
+    .face {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transform: rotateY(calc(var(--i)*45deg));
+
+    }
+
+    #face1 {
+        background: url("./img/duck.jpeg");
+        background-size: cover;
+        transform: translateZ(200px);
+
+    }
+
+    #face2 {
+        background: url("./img/flower.jpg");
+        background-size: cover;
+        transform: rotateY(90deg) translateX(-200px);
+        transform-origin: left;
+
+    }
+
+    #face3 {
+        background: url("./img/tree\ .jpeg");
+        background-size: cover;
+        transform: translateZ(-200px);
+    }
+
+    #face4 {
+        background: url("./img/sursuri.jpeg");
+        background-size: cover;
+        transform: rotateY(90deg) translateX(200px);
+        transform-origin: right;
+    }
+
+    #face5 {
+        background: url("./img/street.jpg");
+        background-size: cover;
+        transform: rotateX(90deg) translateZ(200px);
+        transform-origin: left;
+    }
+
+    #face6 {
+        background: url("./img//marbles.jpeg");
+        background-size: cover;
+        transform: rotateX(-90deg) translateZ(200px);
+        transform-origin: right;
+    }
+
+    @keyframes animate {
+        0% {
+            transform: perspective(1000px)  rotate3d(1, 0, 1, 0deg);;
+        }
+
+        100% {
+            transform: perspective(1000px) rotate3d(1, 0, 1, 360deg);
+        }
+    }
+</style>
+
+<body>
+    <div class="cube">
+        <div class="face" id="face1"></div>
+        <div class="face" id="face2"></div>
+        <div class="face" id="face3"></div>
+        <div class="face" id="face4"></div>
+        <div class="face" id="face5"></div>
+        <div class="face" id="face6"></div>
+    </div>
+    <button id="stopBtn" onclick="stop()">stop</button>
+</body>
+<script>
+    function stop(){
+        document.querySelector(".cube").style.animationName = "none";
+    }
+</script>
+
+</html>

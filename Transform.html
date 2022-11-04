@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform</title>
+    <style>
+        body{
+            background: skyblue;
+            text-align: center;
+        }
+
+        .wrapper{
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        img{
+            transform: translateX(200px);
+            /* We can use translate(200px, 200px) to transform in X and Y at the same time. */
+            transform: skewX(3); 
+            /* This scales the image 3 times in X direction. */
+            /* scale(3) will scale in X and Y direction both simultaneously. */
+            /* scale(3, 4) will scale 3 times in X direction and 4 times in Y direction. */
+            transform: rotate(90deg);
+            /* This will rotate the image by 90 degrees about the center. */
+            /* rotateX(a) will rotate about X direction by 'a' degrees and simlarly for Y and Z. */
+            /* transform: translateX(200px) skewX(3) rotate(90deg) ; This is a transform short-hand. */
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <img src="./img/icons8-around-the-globe-64.png" alt="error">
+    </div>
+</body>
+</html>
